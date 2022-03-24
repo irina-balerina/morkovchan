@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+} /*меняет ширину блока, чтобы было удобно верстать*/
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+} /*убрали линию обводки у некоторых браузеров*/
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+} /*делает эти элементы блочными*/
+
+html,
+body {
+  height: 100%; /*Обязательно!*/
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+} /*уравнивают поведение шрифтов и элементов для разных браузеров, в т.ч. запрещают увеличение шрифта на телефоне*/
+
+input,
+button,
+textarea {
+  font-family: inherit;
+} /*чтобы наследовали шрифты (поумолчанию в браузерах не наследуются)*/
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+} /*устранили недостатки некоторых браузеров*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit; /*наследовать*/
+  font-weight: inherit;
+} /*обнулили все заголовки*/
+
+html,
+body{
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #f7f7f7;
+  font-weight: 500;
+  font-family: "Montserrat";
+   background: orangered;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+}
+
+._container {     /*._ означает технический класс*/
+  max-width: 1046px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing:content-box;  /*или просто увеличиваем на 30рх max-width и box-sizing остается border-box*/
+}
+
+/*---------------------------------------*/
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 104px;
+}
+.header__logo {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.1px;
+  color: #252B42;
+}
+
+
+.menu {
+  padding: 5px 0;  /*отступ безопасности при сжимании окна*/ /*АДАПТИВ*/
+}
+.menu__list {
+  display: flex;
+  padding-left: 15px;
+  flex-wrap: wrap;  /*если кол-во пунктов увеличит заказчик. Для АДАПТИВА*/
+}
+.menu__item:not(:last-child) {
+  margin: 0 21px 0 0;
+}
+.menu__link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;  /*24/14*100=171   для АДАПТИВА*/
+  text-align: center;
+  letter-spacing: 0.2px;
+  /* color: #737373; */
+  color: #f7f7f7;
+}
+@media(max-width: 992px){        /*АДАПТИВ*/
+  .header__menu{
+  margin: 0 0 0 80px;
+}
+}
+@media(max-width: 768px){   /*АДАПТИВ*/
+  .header__menu{
+  margin: 0 0 0 40px;
+}
+}
+@media(max-width: 479px){   /*АДАПТИВ*/
+  .menu__link{
+  font-size: 16px;   /*увеличили шрифт АДАПТИВ*/
+}
+
+}
+@media(max-width: 500px){   /*АДАПТИВ*/
+  .header__container{
+    display: block;
+  }
+  .header__container a {
+    display: block;
+    width: 100%;
+    margin: 15px auto 0;
+    text-align: center;
+  }
+  .assorty__contain {
+    display: block;
+  }
+}
+
+main {
+  padding: 15px;
+}
+.image {
+  margin-bottom: 10px;
+}
+.image img{
+  width: 100%;
+}
+h2 {
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  color: #252B42;
+}
+
+
+.assorty__item {
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  color: #252B42;
+}
+.assorty__contain {
+  margin-top: 10px;
+  display: flex;
+}
+.assorty__item-left {
+  
+margin: 0 30px 0 0;
+  
+}
+.assorty__images {
+  position: relative;
+  width: 200px;
+  margin: 0 auto 20px ;
+}
+.logo {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 10;
+}
+.logo img {
+  width: 40px;
+}
+.assorty__item-img {
+  width: 200px;
+  
+}
+.assorty__item-img  img{
+  width: 100%;
+}
+.assorty__item-price {
+  color: #252B42;
+  text-align:center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  width: 120px;
+  border: 2px solid;
+  
+  border-radius: 20px;
+  margin: 20px auto;
+}
+.button-primary {
+  padding: 0 10px;
+}
+
+@media(max-width: 500px){   
+  .assorty__contain {
+    display: block;
+  }
+}
+
+
+
+footer {
+  font-size: 12px;
+  color: #f7f7f7;
+  padding: 20px 15px;
+  text-align: end;
+  border-top: 1px solid #f7f7f7;
+}
+footer span {
+  padding-right: 20px;
+}
