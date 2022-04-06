@@ -1,27 +1,47 @@
 let cart = {
   'morkov': {
     "name": "салат из моркови",
-    "price": "230руб/ 300гр",
+    "price": "200руб/ 300гр",
     "count": 0,
+    "htmlCount": document.getElementById("mork"),
+  },
+  'sparja': {
+    "name": "спаржа",
+    "price": "300руб/ 300гр",
+    "count": 0,
+    "htmlCount": document.getElementById("spar"),
+  },
+  'funchoza': {
+    "name": "фунчоза",
+    "price": "300руб/ 300гр",
+    "count": 0,
+    "htmlCount": document.getElementById("funch"),
   },
   'griby': {
     "name": "салат из грибов",
-    "price": "250руб/ 300гр",
+    "price": "300руб/ 300гр",
     "count": 0,
+    "htmlCount": document.getElementById("gr"),
   },
   'he_gov': {
     "name": "хе из говядины",
     "price": "380руб/ 300гр",
     "count": 0,
+    "htmlCount": document.getElementById("heg"),
   },
   'he_serd': {
     "name": "хе из сердечек",
     "price": "350руб/ 300гр",
     "count": 0,
+    "htmlCount": document.getElementById("hes"),
+  },
+  'kimchi': {
+    "name": "кимчи",
+    "price": "300руб/ 300гр",
+    "count": 0,
+    "htmlCount": document.getElementById("kim"),
   },
 }
-
-let counter = document.querySelectorAll('.counter'); 
 
 // надо сделать:
 
@@ -38,41 +58,10 @@ document.addEventListener('click', (event) => {
 
 const plusFunction = (id) => {
   cart[id]["count"]++;
-   renderCart();
-
+  cart[id]["htmlCount"].innerHTML = cart[id]["count"];//вывели значение счетчика на экран
 }
 
 const minusFunction = (id) => {
   cart[id]["count"]--;
-  renderCart();
-
+  cart[id]["htmlCount"].innerHTML = cart[id]["count"];//вывели значение счетчика на экран
 }
-
-
-// const minusFunction = (id) => {
-//   if((cart[id]["count"]-1) == 0) {
-//     deleteFunction(id);
-//     return true;
-//   }
-//   cart[id]["count"]--;
-//   renderCart();
-// }
-
-// удаление товара;
-// const deleteFunction = (id) => {
-//   delete cart[id];
-//   renderCart();
-// }
-
-
-// вывести счетчик на экран.
-const renderCart = () => {
-  console.log(cart);
-  // counter.forEach(item => {
-  //   item.textContent = "";
-  // });  ?????
-  
-}
- renderCart();
-
-
